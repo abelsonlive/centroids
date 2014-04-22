@@ -6,22 +6,32 @@ import os
 
 import colorsys
 
-def get_hsv(hexrgb):
+def get_color_data(hexrgb):
     hexrgb = hexrgb.lstrip("#")   # in case you have Web color specs
     r, g, b = (int(hexrgb[i:i+2], 16) / 255.0 for i in xrange(0,5,2))
-    return colorsys.rgb_to_hsv(r, g, b)
-
+    h, s, v = colorsys.rgb_to_hsv(r, g, b)
+    
+    return {
+      'red': r,
+      'green': g,
+      'blue': b,
+      'hue': h,
+      'saturation': s,
+      'value': v
+    }
+        
 # data
 def get_data():
   reader = json.load(open('centroids-colors.json'))
   data = []
   for r in reader:
     if r['hex_code'] != 'ffffff':
-      r['hsv'] = get_hsv(r['hex_code'])
-      data.append(r)
+      c = get_color_data(r['hex_code'])
+      row = dict( r.items() + c.items() )
+      data.append(row)
   return data
 
-centroids = [r for r in sorted(get_data(), key=itemgetter('hsv'))]
+centroids = [r for r in sorted(get_data(), key=itemgetter('country'))]
 
 with open('centroids-colors.json', 'wb') as f:
   f.write(json.dumps(centroids, indent=4))

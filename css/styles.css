@@ -1,10 +1,10 @@
 body{
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica,sans-serif;
-	font-weight: 300;
-	font-size: 8px;
+	font-weight: 00;
+	font-size: 12px;
 	margin: 0;
 	padding: 0;
-/*	background-color: white;*/
+	background-color: black;
 }
 
 #wrapper{
@@ -17,8 +17,9 @@ body{
 	padding: 0;
 }
 .item-row{
-	color:black;
+	color:white;
 	padding:1px;
+	width:110px;
 	margin: 1px;
 }
 .item-filter{
