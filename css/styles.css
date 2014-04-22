@@ -9,7 +9,6 @@ body{
 
 #wrapper{
 	width: 100%;
-  margin: 0;
 }
 
 .label {
@@ -18,7 +17,7 @@ body{
 }
 .item-row{
 	color:white;
-	padding:px;
+	padding:1px;
 	width:115px;
 }
 .item-filter{
