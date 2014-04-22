@@ -13,14 +13,13 @@ body{
 }
 
 .label {
-	margin: 0;
-	padding: 0;
+	margin: 1;
+	padding: 1;
 }
 .item-row{
 	color:white;
-	padding:1px;
-	width:110px;
-	margin: 1px;
+	padding:px;
+	width:115px;
 }
 .item-filter{
 	-webkit-touch-callout: none;

@@ -31,7 +31,7 @@ def get_data():
       data.append(row)
   return data
 
-centroids = [r for r in sorted(get_data(), key=itemgetter('country'))]
+centroids = [r for r in reversed(sorted(get_data(), key=itemgetter('hue')))]
 
 with open('centroids-colors.json', 'wb') as f:
   f.write(json.dumps(centroids, indent=4))

@@ -5,10 +5,11 @@
 	function bakeRows(rows){
 		for (var i in rows) {
 			var content = '<div class="item-row item-' + rows[i]['fips'] + '">' +
+											'<img width="115px" src="images/' + rows[i]['img'] + '">' +
 											'<div class="label" style="background-color:#' + rows[i]['hex_code'] + ';">' +
-												'<a href="images/' + rows[i]['img'] + '" rel="shadowbox"/></a>' +
-												 	'<img width="110px" src="images/' + rows[i]['img'] + '"/>' +
-													'<center><br><p class="label color">' + rows[i]['country'] + '</p><br></center>' +
+												'<a href="images/' + rows[i]['img'] + '" rel="shadowbox"/>' +
+													'<center><br>' + rows[i]['country'] + '<br></br></center>' +
+												'</a>' +
 											'</div>' +
 										'</div>'
   		$card_container.append(content);
